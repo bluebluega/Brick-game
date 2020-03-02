@@ -15,7 +15,7 @@ void game() {
   textSize(30);
   text("Lives: " + lives, 100, 300);
   
-  text("Score: " + score, 100, 350);
+  text("Score: " + points, 100, 350);
    
   text("High Score: " + HS, 100, 400);
  
@@ -26,18 +26,19 @@ void gameClicks() {
 }
 
 void ball() {
-  ellipse(bx, by, 20, 20);
+  fill(c);
+  circle(bx, by, thickness);
   //move the ball
   bx = bx + bvx;
   by = by + bvy;
-  if (bx < 0 || bx > width) {
+  if (bx + thickness/2 < 0 || bx + thickness/2 > width) { //HALP
     bvx = -bvx;
   }
-  if (by < 0 || by > height) {
+  if (by + thickness/2 < 0 || by + thickness/2 > height) {
     bvy = -bvy;
   }
   
-  if (dist(bx, by, px, py) <= 60){
+  if (dist(bx, by, px, py) <= thickness2/2 + thickness/2){
   bvx = (bx - px)/10;
   bvy = (by - py)/10;
 }
@@ -59,14 +60,15 @@ void ball() {
 }
 
 void paddle() {
-  ellipse(px, py, 100, 100);
+  fill(c2);
+  circle(px, py, thickness2);
   if (rightKey) px = px + 5;
   if (leftKey) px = px - 5;
-  if (px + 50 >= 800){
-    px = 750;
+  if (px + thickness2/2 >= width){
+    px = width - thickness2/2;
   }
-  if (px - 50 <= 0){
-    px = 50;
+  if (px - thickness2/2 <= 0){
+    px = thickness2/2;
   }
 
 }

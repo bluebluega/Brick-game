@@ -6,7 +6,7 @@ void gameover() {
    
    textSize(30);
   
-  text("Score: " + score, 100, 350);
+  text("Score: " + points, 100, 350);
    
   text("High Score: " + HS, 100, 400);
 }

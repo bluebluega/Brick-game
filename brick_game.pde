@@ -1,3 +1,7 @@
+//THINGS TO GET DONE
+  //-refine option screen, high score, add points, colour
+
+
 final int INTRO = 1;
 final int GAME  = 2;
 final int GAMEOVER = 3;
@@ -16,7 +20,7 @@ boolean leftKey, rightKey;
 
 //grid planning varibles
 
-int gridx, gridy, lives, score, HS;
+int gridx, gridy, lives, points, HS;
 
 
 void setup() {
